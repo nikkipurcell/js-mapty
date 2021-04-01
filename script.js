@@ -111,8 +111,16 @@ class App {
   }
 
   _getPosition() {
-    // Geolocation API
-    // Takes success and error callbacks, has position event
+    /*
+    Geolocation API
+    Takes success and error callbacks, has access to the position object.
+    It is async behavior.
+
+      navigator.geolocation.getCurrentPosition(
+        position => console.log(position),
+        err => console.error(err)
+      );
+    */
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         this._loadMap.bind(this),
